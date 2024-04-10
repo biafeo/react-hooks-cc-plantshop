@@ -14,29 +14,23 @@ function PlantPage() {
   function addPlant(newPlant) {
     const updatedPlants = [...plants, newPlant];
     setPlants(updatedPlants);
-    // console.log(updatedPlants);
   }
+  const [submittedSearch, setSubmittedSearch] = useState("");
 
-  // function deletePlant(id) {
-  //   const updatedPlants = plants.filter((plant) => plant.id !== id);
-  //   setPlants(updatedPlants);
-  // }
-  // function updatedPlant(id, inStock) {
-  //   const updatedPlants = plants.map((plant) => {
-  //     if (plant.id === id) {
-  //       return { ...plant, inStock };
-  //     } else {
-  //       return plant;
-  //     }
-  //   });
-  //   setPlants(updatedPlants);
-  // }
+  function deletePlant(id) {
+    const updatedPlants = plants.filter((plant) => plant.id !== id);
+    setPlants(updatedPlants);
+  }
 
   return (
     <main>
       <NewPlantForm onAddPlant={addPlant} />
-      <Search />
-      <PlantList plants={plants} />
+      <Search setSubmittedSearch={setSubmittedSearch} />
+      <PlantList
+        plants={plants}
+        submittedSearch={submittedSearch}
+        onDeletePlant={deletePlant}
+      />
     </main>
   );
 }

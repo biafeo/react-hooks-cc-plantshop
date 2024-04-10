@@ -41,12 +41,6 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
-    },
-    {
-      "name": "boldo",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ6X-hqZRjll7yaChOLXbpdnRmGEMUX_j5lL2372kBUw&s",
-      "price": "25.90",
-      "id": 8
     }
   ]
 }

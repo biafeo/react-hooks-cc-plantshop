@@ -22,7 +22,9 @@ function NewPlantForm({ onAddPlant }) {
       .then((r) => r.json())
       .then((data) => {
         onAddPlant(data);
-        // reset the form after submited??
+        setNewPlantName("");
+        setNewPlantImage("");
+        setNewPlantPrice("");
       });
   }
   return (
