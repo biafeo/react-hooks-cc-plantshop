@@ -2,11 +2,16 @@ import React, { useState } from "react";
 
 function PlantCard({ plant, id, onDeletePlant }) {
   const { name, image, price } = plant;
-  const [isInStock, setIsInStock] = useState(true);
 
+  // function for the button in stock and out of stock
+
+  const [isInStock, setIsInStock] = useState(true);
   function handleInStock() {
     setIsInStock((prevIsInStock) => !prevIsInStock);
   }
+
+  // function for the delete button (optional feature)
+
   function handleDelete() {
     fetch(`http://localhost:6001/plants/${id}`, {
       method: "DELETE",

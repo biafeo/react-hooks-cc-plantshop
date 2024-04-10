@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 
 function NewPlantForm({ onAddPlant }) {
+  // use state for form inputs
+
   const [newPlantName, setNewPlantName] = useState("");
   const [newPlantImage, setNewPlantImage] = useState("");
   const [newPlantPrice, setNewPlantPrice] = useState("");
+
+  // Function to submit form
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -12,6 +16,8 @@ function NewPlantForm({ onAddPlant }) {
       image: newPlantImage,
       price: newPlantPrice,
     };
+    // using the fetch to POST new plants and add them to the sever
+
     fetch("http://localhost:6001/plants", {
       method: "POST",
       headers: {
@@ -22,11 +28,15 @@ function NewPlantForm({ onAddPlant }) {
       .then((r) => r.json())
       .then((data) => {
         onAddPlant(data);
+
+        // added this feature so the form will reset once submitted
+
         setNewPlantName("");
         setNewPlantImage("");
         setNewPlantPrice("");
       });
   }
+
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
