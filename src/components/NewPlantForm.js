@@ -21,7 +21,7 @@ function NewPlantForm({ onAddPlant }) {
     fetch("http://localhost:6001/plants", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "Application/JSON",
       },
       body: JSON.stringify(plantObj),
     })
@@ -44,14 +44,14 @@ function NewPlantForm({ onAddPlant }) {
         <input
           type="text"
           name="name"
-          placeholder="plant name"
+          placeholder="Plant name"
           onChange={(e) => setNewPlantName(e.target.value)}
           value={newPlantName}
         />
         <input
           type="text"
           name="image"
-          placeholder="plant image"
+          placeholder="Image URL"
           onChange={(e) => setNewPlantImage(e.target.value)}
           value={newPlantImage}
         />
@@ -59,7 +59,7 @@ function NewPlantForm({ onAddPlant }) {
           type="number"
           name="price"
           step="0.01"
-          placeholder="plant price"
+          placeholder="Price"
           onChange={(e) => setNewPlantPrice(e.target.value)}
           value={newPlantPrice}
         />
